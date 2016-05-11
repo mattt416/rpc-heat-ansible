@@ -1,3 +1,5 @@
 parameters:
   ansible_tags: compute,block,object,ceph
   rpc_release: r12.0.0rc2
+  rpc_heat_ansible_repo: https://github.com/mattt416/rpc-heat-ansible.git
+  rpc_heat_ansible_release: mattt

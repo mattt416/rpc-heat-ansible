@@ -360,6 +360,9 @@
     - name: Clone RPC Repo
       git: repo=https://github.com/rcbops/rpc-openstack dest=/opt/rpc-openstack version={{ rpc_release }} recursive=yes force=yes
 
+    - name: Bump osa version
+      command: git checkout stable/mitaka chdir=/opt/rpc-openstack/openstack-ansible
+
     - name: Bugs - Apply Patches (OpenStack Ansible)
       command: git apply /opt/cloud-training/rpc-heat-ansible/playbooks/files/patches/{{ item }} chdir=/opt/rpc-openstack/openstack-ansible
       when: apply_patches | bool
